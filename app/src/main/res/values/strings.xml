@@ -15,4 +15,10 @@
     <string name="textview2">TextView</string>
     <string name="_2022">Справочник рыбака 2022</string>
     <string name="fishermen_title">fishermen</string>
+
+    <string name="you_clicked_fish">You clicked: Рыбы</string>
+    <string name="you_clicked_bait">You clicked: Наживки</string>
+    <string name="you_clicked_tackle">You clicked: Снасти</string>
+    <string name="you_clicked_about_program">You clicked: О программе</string>
+    <string name="you_clicked_fishing_stories">You clicked: Рыбацкие истории</string>
 </resources>

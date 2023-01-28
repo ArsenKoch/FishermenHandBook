@@ -12,8 +12,8 @@ import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.main_content.*
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
-    private var adapter: MyAdapter? = null
 
+    private var adapter: MyAdapter? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -21,7 +21,6 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         nav_view.setNavigationItemSelectedListener(this)
 
         val list = ArrayList<ListItem>()
-
 
         list.addAll(
             fillArrays(
@@ -38,10 +37,9 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     }
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
-
         when (item.itemId) {
             R.id.id_fish -> {
-                Toast.makeText(this, "You clicked: Рыбы", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, R.string.you_clicked_fish, Toast.LENGTH_SHORT).show()
                 adapter?.updateAdapter(
                     fillArrays(
                         resources.getStringArray(R.array.fish),
@@ -51,7 +49,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 )
             }
             R.id.id_na -> {
-                Toast.makeText(this, "You clicked: Наживки", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, R.string.you_clicked_bait, Toast.LENGTH_SHORT).show()
                 adapter?.updateAdapter(
                     fillArrays(
                         resources.getStringArray(R.array.na),
@@ -61,7 +59,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 )
             }
             R.id.id_sna -> {
-                Toast.makeText(this, "You clicked: Снасти", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, R.string.you_clicked_tackle, Toast.LENGTH_SHORT).show()
                 adapter?.updateAdapter(
                     fillArrays(
                         resources.getStringArray(R.array.sna),
@@ -71,7 +69,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 )
             }
             R.id.id_history -> {
-                Toast.makeText(this, "You clicked: Истории", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this,  R.string.you_clicked_fishing_stories, Toast.LENGTH_SHORT).show()
                 adapter?.updateAdapter(
                     fillArrays(
                         resources.getStringArray(R.array.history),
@@ -81,7 +79,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 )
             }
             R.id.id_info -> {
-                Toast.makeText(this, "You clicked: О программе", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this,  R.string.you_clicked_about_program, Toast.LENGTH_SHORT).show()
                 adapter?.updateAdapter(
                     fillArrays(
                         resources.getStringArray(R.array.info),
@@ -91,6 +89,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 )
             }
         }
+
         drawerLayout.closeDrawer(GravityCompat.START)
         return true
     }

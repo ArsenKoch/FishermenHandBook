@@ -14,5 +14,4 @@ class ContentActivity : AppCompatActivity() {
         tvContent.text = intent.getStringExtra("Content")
         imageView2.setImageResource(intent.getIntExtra("Image", R.drawable.img_shyka))
     }
-
 }
