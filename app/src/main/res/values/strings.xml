@@ -3,7 +3,7 @@
     <string name="fish">Рыбы</string>
     <string name="na">Наживки</string>
     <string name="sna">Снасти</string>
-    <string name="history">Истории</string>
+    <string name="history">Рыбацкие истории</string>
     <string name="fishermen_hand_book">FisherMen Hand Book</string>
     <string name="icon_app">icon_app</string>
     <string name="aboutProgram">О программе</string>
@@ -13,5 +13,15 @@
     <string name="iv">iv</string>
     <string name="textview">TextView</string>
     <string name="textview2">TextView</string>
+    <string name="_2022">Справочник рыбака 2022</string>
+    <string name="fishermen_title">fishermen</string>
 
+    <string name="you_clicked_fish">You clicked: Рыбы</string>
+    <string name="you_clicked_bait">You clicked: Наживки</string>
+    <string name="you_clicked_tackle">You clicked: Снасти</string>
+    <string name="you_clicked_about_program">You clicked: О программе</string>
+    <string name="you_clicked_fishing_stories">You clicked: Рыбацкие истории</string>
+    <string name="image_pike">image pike</string>
+    <string name="pike">Pike</string>
+    <string name="description">Description</string>
 </resources>

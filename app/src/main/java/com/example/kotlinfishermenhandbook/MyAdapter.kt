@@ -13,9 +13,9 @@ import androidx.recyclerview.widget.RecyclerView
 
 class MyAdapter(listArray: ArrayList<ListItem>, context: Context) :
     RecyclerView.Adapter<MyAdapter.ViewHolder>() {
-    private var listArrayR = listArray
-    private var contextR = context
 
+    private var listArrayRv = listArray
+    private var contextRv = context
 
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
 
@@ -32,9 +32,9 @@ class MyAdapter(listArray: ArrayList<ListItem>, context: Context) :
             itemView.setOnClickListener {
                 Toast.makeText(context, "You clicked: ${tvTitle.text}! ", Toast.LENGTH_SHORT).show()
                 val i = Intent(context, ContentActivity::class.java).apply {
-                    putExtra("Title", tvTitle.text.toString())
-                    putExtra("Content", listItem.contentText)
-                    putExtra("Image", listItem.image_id)
+                    putExtra(TITLE, tvTitle.text.toString())
+                    putExtra(CONTENT, listItem.contentText)
+                    putExtra(IMAGE, listItem.image_id)
                 }
                 context.startActivity(i)
             }
@@ -42,24 +42,30 @@ class MyAdapter(listArray: ArrayList<ListItem>, context: Context) :
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val inflater = LayoutInflater.from(contextR)
+        val inflater = LayoutInflater.from(contextRv)
         return ViewHolder(inflater.inflate(R.layout.item_layout, parent, false))
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
 
-        val listItem = listArrayR[position]
-        holder.bind(listItem, contextR)
+        val listItem = listArrayRv[position]
+        holder.bind(listItem, contextRv)
     }
 
     override fun getItemCount(): Int {
-        return listArrayR.size
+        return listArrayRv.size
     }
 
     @SuppressLint("NotifyDataSetChanged")
     fun updateAdapter(listArray: List<ListItem>) {
-        listArrayR.clear()
-        listArrayR.addAll(listArray)
+        listArrayRv.clear()
+        listArrayRv.addAll(listArray)
         notifyDataSetChanged()
+    }
+
+    companion object {
+         const val TITLE = "Title"
+         const val CONTENT = "Content"
+         const val IMAGE = "Image"
     }
 }
