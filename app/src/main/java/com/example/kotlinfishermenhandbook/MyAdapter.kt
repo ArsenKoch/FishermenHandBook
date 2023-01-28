@@ -64,8 +64,8 @@ class MyAdapter(listArray: ArrayList<ListItem>, context: Context) :
     }
 
     companion object {
-        private const val TITLE = "Title"
-        private const val CONTENT = "Content"
-        private const val IMAGE = "Image"
+         const val TITLE = "Title"
+         const val CONTENT = "Content"
+         const val IMAGE = "Image"
     }
 }

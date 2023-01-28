@@ -21,4 +21,7 @@
     <string name="you_clicked_tackle">You clicked: Снасти</string>
     <string name="you_clicked_about_program">You clicked: О программе</string>
     <string name="you_clicked_fishing_stories">You clicked: Рыбацкие истории</string>
+    <string name="image_pike">image pike</string>
+    <string name="pike">Pike</string>
+    <string name="description">Description</string>
 </resources>

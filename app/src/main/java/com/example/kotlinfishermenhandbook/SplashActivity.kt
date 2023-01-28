@@ -6,10 +6,11 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 
+@Suppress("DEPRECATION")
 @SuppressLint("CustomSplashScreen")
 class SplashActivity : AppCompatActivity() {
 
-    private val splashScreentimeout: Long = 2500
+    private val splashScreenTimeOut: Long = 2500
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)
@@ -18,6 +19,6 @@ class SplashActivity : AppCompatActivity() {
 
             startActivity(Intent(this, MainActivity::class.java))
             finish()
-        }, splashScreentimeout)
+        }, splashScreenTimeOut)
     }
 }
