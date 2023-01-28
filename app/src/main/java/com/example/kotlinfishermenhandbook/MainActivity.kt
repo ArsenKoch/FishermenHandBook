@@ -15,6 +15,8 @@ class MainActivity : AppCompatActivity(),  NavigationView.OnNavigationItemSelect
 
     private var adapter: FishermenAdapter? = null
 
+    private val useCaseImpl = UseCaseImpl()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -23,7 +25,7 @@ class MainActivity : AppCompatActivity(),  NavigationView.OnNavigationItemSelect
         val list = ArrayList<ListItem>()
 
         list.addAll(
-            useCaseimpl.fillArrays(
+            useCaseImpl.fillArrays(
                 resources.getStringArray(R.array.fish),
                 resources.getStringArray(R.array.fish_content),
                 getImageId(R.array.fish_image_array)
@@ -41,7 +43,7 @@ class MainActivity : AppCompatActivity(),  NavigationView.OnNavigationItemSelect
             R.id.id_fish -> {
                 Toast.makeText(this, R.string.you_clicked_fish, Toast.LENGTH_SHORT).show()
                 adapter?.updateAdapter(
-                    useCaseimpl.fillArrays(
+                    useCaseImpl.fillArrays(
                         resources.getStringArray(R.array.fish),
                         resources.getStringArray(R.array.fish_content),
                         getImageId(R.array.fish_image_array)
@@ -51,7 +53,7 @@ class MainActivity : AppCompatActivity(),  NavigationView.OnNavigationItemSelect
             R.id.id_na -> {
                 Toast.makeText(this, R.string.you_clicked_bait, Toast.LENGTH_SHORT).show()
                 adapter?.updateAdapter(
-                    useCaseimpl.fillArrays(
+                    useCaseImpl.fillArrays(
                         resources.getStringArray(R.array.na),
                         resources.getStringArray(R.array.na_content),
                         getImageId(R.array.na_image_array)
@@ -61,7 +63,7 @@ class MainActivity : AppCompatActivity(),  NavigationView.OnNavigationItemSelect
             R.id.id_sna -> {
                 Toast.makeText(this, R.string.you_clicked_tackle, Toast.LENGTH_SHORT).show()
                 adapter?.updateAdapter(
-                    useCaseimpl.fillArrays(
+                    useCaseImpl.fillArrays(
                         resources.getStringArray(R.array.sna),
                         resources.getStringArray(R.array.sna_content),
                         getImageId(R.array.sna_image_array)
@@ -71,7 +73,7 @@ class MainActivity : AppCompatActivity(),  NavigationView.OnNavigationItemSelect
             R.id.id_history -> {
                 Toast.makeText(this,  R.string.you_clicked_fishing_stories, Toast.LENGTH_SHORT).show()
                 adapter?.updateAdapter(
-                    useCaseimpl.fillArrays(
+                    useCaseImpl.fillArrays(
                         resources.getStringArray(R.array.history),
                         resources.getStringArray(R.array.history_content),
                         getImageId(R.array.history_image_array)
@@ -81,7 +83,7 @@ class MainActivity : AppCompatActivity(),  NavigationView.OnNavigationItemSelect
             R.id.id_info -> {
                 Toast.makeText(this,  R.string.you_clicked_about_program, Toast.LENGTH_SHORT).show()
                 adapter?.updateAdapter(
-                    useCaseimpl.fillArrays(
+                    useCaseImpl.fillArrays(
                         resources.getStringArray(R.array.info),
                         resources.getStringArray(R.array.info_content),
                         getImageId(R.array.info_image_array)
@@ -93,30 +95,6 @@ class MainActivity : AppCompatActivity(),  NavigationView.OnNavigationItemSelect
         drawerLayout.closeDrawer(GravityCompat.START)
         return true
     }
-
-//    private fun fillArrays(
-//        titleArray: Array<String>,
-//        contentArray: Array<String>,
-//        imageArray: IntArray
-//    ): List<ListItem> {
-//        val listItemArray = ArrayList<ListItem>()
-//        for (n in titleArray.indices) {
-//            val listItem = ListItem(imageArray[n], titleArray[n], contentArray[n])
-//            listItemArray.add(listItem)
-//        }
-//        return listItemArray
-//    }
-
-    private val useCaseimpl = object : UseCaseImpl(){
-        override fun fillArrays(
-            titleArray: Array<String>,
-            contentArray: Array<String>,
-            imageArray: IntArray
-        ): List<ListItem> {
-            return super.fillArrays(titleArray, contentArray, imageArray)
-        }
-    }
-
 
     private fun getImageId(imageArrayId: Int): IntArray {
         val tArray: TypedArray = resources.obtainTypedArray(imageArrayId)
