@@ -15,6 +15,6 @@ class ContentActivity : AppCompatActivity() {
         setContentView(R.layout.content_layout)
         tvTitle.text = intent.getStringExtra(TITLE)
         tvContent.text = intent.getStringExtra(CONTENT)
-        imageView2.setImageResource(intent.getIntExtra(IMAGE, R.drawable.img_shyka))
+        ivAnchor.setImageResource(intent.getIntExtra(IMAGE, R.drawable.img_shyka))
     }
 }
