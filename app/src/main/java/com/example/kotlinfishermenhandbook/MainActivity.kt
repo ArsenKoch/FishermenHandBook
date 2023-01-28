@@ -13,7 +13,7 @@ import kotlinx.android.synthetic.main.main_content.*
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
-    private var adapter: MyAdapter? = null
+    private var adapter: FishermenAdapter? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,7 +32,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
         rcView.hasFixedSize()
         rcView.layoutManager = LinearLayoutManager(this)
-        adapter = MyAdapter(list, this)
+        adapter = FishermenAdapter(list, this)
         rcView.adapter = adapter
     }
 
