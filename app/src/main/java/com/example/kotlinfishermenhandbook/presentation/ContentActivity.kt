@@ -1,10 +1,11 @@
-package com.example.kotlinfishermenhandbook
+package com.example.kotlinfishermenhandbook.presentation
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.example.kotlinfishermenhandbook.FishermenAdapter.Companion.CONTENT
-import com.example.kotlinfishermenhandbook.FishermenAdapter.Companion.IMAGE
-import com.example.kotlinfishermenhandbook.FishermenAdapter.Companion.TITLE
+import com.example.kotlinfishermenhandbook.presentation.FishermenAdapter.Companion.CONTENT
+import com.example.kotlinfishermenhandbook.presentation.FishermenAdapter.Companion.IMAGE
+import com.example.kotlinfishermenhandbook.presentation.FishermenAdapter.Companion.TITLE
+import com.example.kotlinfishermenhandbook.R
 import kotlinx.android.synthetic.main.content_layout.*
 
 

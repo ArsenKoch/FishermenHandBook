@@ -14,7 +14,7 @@
         android:theme="@style/Theme.KotlinFishermenHandBook"
         tools:targetApi="31">
         <activity
-            android:name=".SplashActivity"
+            android:name=".presentation.SplashActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -22,9 +22,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity">
+        <activity android:name=".presentation.MainActivity">
 
         </activity>
-        <activity android:name=".ContentActivity" />
+        <activity android:name=".presentation.ContentActivity" />
     </application>
 </manifest>

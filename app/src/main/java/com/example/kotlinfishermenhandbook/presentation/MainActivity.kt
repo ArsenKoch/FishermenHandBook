@@ -1,4 +1,4 @@
-package com.example.kotlinfishermenhandbook
+package com.example.kotlinfishermenhandbook.presentation
 
 import android.content.res.TypedArray
 import android.os.Bundle
@@ -7,6 +7,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.kotlinfishermenhandbook.R
 import com.example.kotlinfishermenhandbook.domain.entity.FishermenListItem
 import com.google.android.material.navigation.NavigationView
 import kotlinx.android.synthetic.main.activity_main.*
@@ -15,8 +16,6 @@ import kotlinx.android.synthetic.main.main_content.*
 class MainActivity : AppCompatActivity(),  NavigationView.OnNavigationItemSelectedListener {
 
     private var adapter: FishermenAdapter? = null
-
-    private val useCaseImpl = UseCaseImpl()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -72,7 +71,7 @@ class MainActivity : AppCompatActivity(),  NavigationView.OnNavigationItemSelect
                 )
             }
             R.id.id_history -> {
-                Toast.makeText(this,  R.string.you_clicked_fishing_stories, Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, R.string.you_clicked_fishing_stories, Toast.LENGTH_SHORT).show()
                 adapter?.updateAdapter(
                     useCaseImpl.fillArrays(
                         resources.getStringArray(R.array.history),
@@ -82,7 +81,7 @@ class MainActivity : AppCompatActivity(),  NavigationView.OnNavigationItemSelect
                 )
             }
             R.id.id_info -> {
-                Toast.makeText(this,  R.string.you_clicked_about_program, Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, R.string.you_clicked_about_program, Toast.LENGTH_SHORT).show()
                 adapter?.updateAdapter(
                     useCaseImpl.fillArrays(
                         resources.getStringArray(R.array.info),

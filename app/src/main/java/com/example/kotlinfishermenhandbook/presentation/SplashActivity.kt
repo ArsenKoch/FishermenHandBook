@@ -1,10 +1,11 @@
-package com.example.kotlinfishermenhandbook
+package com.example.kotlinfishermenhandbook.presentation
 
 import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
+import com.example.kotlinfishermenhandbook.R
 
 @Suppress("DEPRECATION")
 @SuppressLint("CustomSplashScreen")

@@ -1,4 +1,4 @@
-package com.example.kotlinfishermenhandbook
+package com.example.kotlinfishermenhandbook.presentation
 
 import android.annotation.SuppressLint
 import android.content.Context
