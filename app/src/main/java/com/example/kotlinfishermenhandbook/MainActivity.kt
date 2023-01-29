@@ -7,6 +7,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.kotlinfishermenhandbook.domain.entity.FishermenListItem
 import com.google.android.material.navigation.NavigationView
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.main_content.*
@@ -22,7 +23,7 @@ class MainActivity : AppCompatActivity(),  NavigationView.OnNavigationItemSelect
         setContentView(R.layout.activity_main)
         nav_view.setNavigationItemSelectedListener(this)
 
-        val list = ArrayList<ListItem>()
+        val list = ArrayList<FishermenListItem>()
 
         list.addAll(
             useCaseImpl.fillArrays(

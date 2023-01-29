@@ -6,9 +6,10 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.kotlinfishermenhandbook.databinding.ItemLayoutBinding
+import com.example.kotlinfishermenhandbook.domain.entity.FishermenListItem
 
 class FishermenAdapter(
-    listArray: ArrayList<ListItem>,
+    listArray: ArrayList<FishermenListItem>,
     context: Context
 ) : RecyclerView.Adapter<FishermenViewHolder>() {
 
@@ -30,7 +31,7 @@ class FishermenAdapter(
     override fun getItemCount(): Int = listArrayRv.size
 
     @SuppressLint("NotifyDataSetChanged")
-    fun updateAdapter(listArray: List<ListItem>) {
+    fun updateAdapter(listArray: List<FishermenListItem>) {
         listArrayRv.clear()
         listArrayRv.addAll(listArray)
         notifyDataSetChanged()

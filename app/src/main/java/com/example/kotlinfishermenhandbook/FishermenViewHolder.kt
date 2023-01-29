@@ -8,6 +8,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.example.kotlinfishermenhandbook.databinding.ItemLayoutBinding
+import com.example.kotlinfishermenhandbook.domain.entity.FishermenListItem
 
 class FishermenViewHolder(
     binding: ItemLayoutBinding
@@ -19,7 +20,7 @@ class FishermenViewHolder(
 
 
     @SuppressLint("SetTextI18n")
-    fun bind(listItem: ListItem, context: Context) {
+    fun bind(listItem: FishermenListItem, context: Context) {
         tvTitle.text = listItem.titleText
         tvContent.text = listItem.contentText.substring(0, 100) + "..."
         im.setImageResource(listItem.image_id)
