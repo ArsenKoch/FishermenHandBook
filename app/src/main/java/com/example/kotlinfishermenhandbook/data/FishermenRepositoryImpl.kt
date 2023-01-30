@@ -16,7 +16,7 @@ class FishermenRepositoryImpl(private val context: Context) : FishermenRepositor
         listeners.add(listener)
     }
 
-    fun removeListenerer(listener: FishermenListener) {
+    fun removeListener(listener: FishermenListener) {
         listeners.remove(listener)
     }
 

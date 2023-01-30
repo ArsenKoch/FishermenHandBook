@@ -28,7 +28,7 @@ class FishermenListViewModel(
 
     override fun onCleared() {
         super.onCleared()
-        impl.removeListenerer(listener)
+        impl.removeListener(listener)
     }
 
     fun fillArrays(
