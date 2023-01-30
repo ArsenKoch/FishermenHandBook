@@ -1,6 +1,6 @@
 package com.example.kotlinfishermenhandbook
 
-import androidx.fragment.app.Fragment
+import android.app.Activity
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 
@@ -19,6 +19,5 @@ class FishermenViewModelFactory(
         }
         return viewModel as T
     }
-
-    fun Fragment.factory() = FishermenViewModelFactory(requireActivity().applicationContext as App)
 }
+fun Activity.factory() = FishermenViewModelFactory(applicationContext as App)

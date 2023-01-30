@@ -8,8 +8,6 @@ import com.example.kotlinfishermenhandbook.domain.repository.FishermenRepository
 typealias FishermenListener = (fishermenList:List<FishermenListItem>) -> Unit
 class FishermenRepositoryImpl(private val context: Context) : FishermenRepository {
 
-    private var fishermenList = mutableListOf<FishermenListItem>()
-
     private val listeners = mutableSetOf<FishermenListener>()
 
     fun addListener(listener: FishermenListener) {

@@ -26,11 +26,6 @@ class FishermenListViewModel(
         impl.addListener(listener)
     }
 
-    override fun onCleared() {
-        super.onCleared()
-        impl.removeListener(listener)
-    }
-
     fun fillArrays(
         titleArray: Array<String>, contentArray: Array<String>, imageArray: IntArray
     ): List<FishermenListItem> {
@@ -39,5 +34,10 @@ class FishermenListViewModel(
 
     fun getImageId(imageArrayId: Int): IntArray {
         return impl.getImageId(imageArrayId)
+    }
+
+    override fun onCleared() {
+        super.onCleared()
+        impl.removeListener(listener)
     }
 }
