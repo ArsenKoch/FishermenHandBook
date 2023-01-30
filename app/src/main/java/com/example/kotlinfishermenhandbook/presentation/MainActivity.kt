@@ -7,7 +7,6 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.kotlinfishermenhandbook.FishermenViewModel
 import com.example.kotlinfishermenhandbook.R
 import com.example.kotlinfishermenhandbook.domain.entity.FishermenListItem
 import com.google.android.material.navigation.NavigationView

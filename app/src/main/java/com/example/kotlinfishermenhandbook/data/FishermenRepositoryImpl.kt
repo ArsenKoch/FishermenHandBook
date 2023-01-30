@@ -5,7 +5,20 @@ import android.content.res.TypedArray
 import com.example.kotlinfishermenhandbook.domain.entity.FishermenListItem
 import com.example.kotlinfishermenhandbook.domain.repository.FishermenRepository
 
+typealias FishermenListener = (fishermenList:List<FishermenListItem>) -> Unit
 class FishermenRepositoryImpl(private val context: Context) : FishermenRepository {
+
+    private var fishermenList = mutableListOf<FishermenListItem>()
+
+    private val listeners = mutableSetOf<FishermenListener>()
+
+    fun addListener(listener: FishermenListener) {
+        listeners.add(listener)
+    }
+
+    fun removeListenerer(listener: FishermenListener) {
+        listeners.remove(listener)
+    }
 
     override fun fillArrays(
         titleArray: Array<String>, contentArray: Array<String>, imageArray: IntArray
