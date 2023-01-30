@@ -13,4 +13,31 @@ class FishermenListViewModel(
 
     private val _fishermenItems = MutableLiveData<List<FishermenListItem>>()
     val fishermenItems: LiveData<List<FishermenListItem>> = _fishermenItems
+
+    private val listener: FishermenListener = {
+        _fishermenItems.value = it
+    }
+
+    init {
+        loadFishermen()
+    }
+
+    fun loadFishermen() {
+        impl.addListener(listener)
+    }
+
+    override fun onCleared() {
+        super.onCleared()
+        impl.removeListenerer(listener)
+    }
+
+    fun fillArrays(
+        titleArray: Array<String>, contentArray: Array<String>, imageArray: IntArray
+    ): List<FishermenListItem> {
+        return impl.fillArrays(titleArray, contentArray, imageArray)
+    }
+
+    fun getImageId(imageArrayId: Int): IntArray {
+        return impl.getImageId(imageArrayId)
+    }
 }
