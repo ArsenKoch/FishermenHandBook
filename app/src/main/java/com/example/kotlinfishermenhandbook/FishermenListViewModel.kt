@@ -22,7 +22,7 @@ class FishermenListViewModel(
         loadFishermen()
     }
 
-    fun loadFishermen() {
+    private fun loadFishermen() {
         impl.addListener(listener)
     }
 

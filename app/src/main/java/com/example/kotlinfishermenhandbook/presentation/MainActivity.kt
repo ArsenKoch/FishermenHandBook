@@ -3,13 +3,14 @@ package com.example.kotlinfishermenhandbook.presentation
 import android.os.Bundle
 import android.view.MenuItem
 import android.widget.Toast
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.kotlinfishermenhandbook.FishermenListViewModel
 import com.example.kotlinfishermenhandbook.R
-import com.example.kotlinfishermenhandbook.data.FishermenRepositoryImpl
 import com.example.kotlinfishermenhandbook.domain.entity.FishermenListItem
+import com.example.kotlinfishermenhandbook.factory
 import com.google.android.material.navigation.NavigationView
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.main_content.*
@@ -18,7 +19,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
     private var adapter: FishermenAdapter? = null
 
-    private val viewModel = FishermenListViewModel(FishermenRepositoryImpl(applicationContext))
+    private val viewModel: FishermenListViewModel by viewModels { factory() }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
