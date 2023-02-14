@@ -97,6 +97,7 @@
         <item>Мормышка</item>
         <item>Кружки</item>
         <item>Балансир</item>
+        <item>Спиннинг</item>
 
     </string-array>
 
@@ -149,6 +150,8 @@
         <item>@drawable/sna_spining</item>
 
     </array>
+
+    // Add two elements
 
     <string-array name="history">
 
